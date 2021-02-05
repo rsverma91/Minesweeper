@@ -7,7 +7,6 @@ let initBoardData;
 function App() {
   const [rowCount, setRowCount] = useState(5);
   const [columnCount, setColumnCount] = useState(5);
-  const [bombCount, setBombCount] = useState(5);
   const [boardArr, setBoardArr] = useState([]);
 
   const createBoardArray = () => {
@@ -74,6 +73,15 @@ function App() {
       );
       setBoardArr([...newData]);
     }
+    if (boardCell.bomb) {
+      alert("Oops!!!! Bomb Found");
+      const newData = boardArr.map((boardArrRow) =>
+        boardArrRow.map((boardArrCell) => {
+          return { ...boardArrCell, open: true };
+        })
+      );
+      setBoardArr([...newData]);
+    }
   };
 
   return (
@@ -103,18 +111,6 @@ function App() {
               max="20"
               value={columnCount}
               onChange={(event) => setColumnCount(+event.target.value)}
-            />
-          </div>
-          <div className="input-field">
-            <label>Bomb count</label>
-            <input
-              placeholder="Enter bomb count"
-              id="bomb_count"
-              type="number"
-              min="5"
-              max="20"
-              value={bombCount}
-              onChange={(event) => setBombCount(+event.target.value)}
             />
           </div>
         </div>
