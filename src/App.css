@@ -1,0 +1,87 @@
+h1 {
+  padding: 16px;
+}
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: 0;
+  border-radius: 2px;
+}
+.input-block {
+  width: 35%;
+  border: 1px solid;
+  padding: 14px;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 4px;
+}
+
+.input-field label {
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+button#start_game {
+  padding: 8px;
+  background-color: #4578ec;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 14px;
+  outline: 0;
+}
+button#start_game:hover {
+  background-color: #608df6;
+}
+
+#game_board {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  flex-direction: column;
+}
+#game_board .row-div {
+  display: flex;
+}
+#game_board .row-div > div {
+  border: 1px solid #8b0000;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+}
+#game_board .row-div > div.close:hover {
+  transform: scale(1.2);
+}
+.bomb {
+  background-image: url(./logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.open {
+  background-color: #9e8968;
+}
